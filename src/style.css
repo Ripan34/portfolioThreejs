@@ -425,7 +425,7 @@ section:nth-child(odd)
     width: 100vw;
     height: 100vh;
     background-color: black;
-    animation: shrinkRes 0.5s ease-in both;
+    animation: shrinkRes 1s ease-in both;
     z-index: 9999;
 }
 @keyframes shrinkRes {
@@ -447,5 +447,61 @@ section:nth-child(odd)
     }
     to{
         stroke-dashoffset: 0;
+    }
+}
+.titleHobbies {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    display: none;
+    font-size: 50px;
+}
+.hbHead {
+    font-size: 25px;
+}
+.hbBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    padding: 15px;
+}
+.hb1 {
+    position: fixed;
+    top: 200px;
+    left: 5%;
+    display: none;
+}
+.hb2 {
+    position: fixed;
+    top: 100px;
+    left: 40%;
+    display: none;
+}
+.hb3 {
+    position: fixed;
+    top: 100px;
+    left: 70%;
+    display: none;
+    width: 70%;
+}
+.hb4 {
+    position: fixed;
+    top: 400px;
+    left: 70%;
+    display: none;
+    width: 70%;
+}
+.showHb {
+    display: block;
+    animation: showPrAnimation 0.4s ease-in both;
+}
+@keyframes showPrAnimation {
+    from {
+       
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

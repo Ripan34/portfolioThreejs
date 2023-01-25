@@ -121,7 +121,7 @@ const initial3 = () => {
             const ele = window.document.getElementsByClassName('titleContainer3');
             ele[0].style.display = 'none';
             bdy.className = "stop-scrolling";
-            hideProjects();
+            hideHobbies();
         },
         onComplete: function(){
             const ele = window.document.getElementsByClassName('titleContainer2');
@@ -376,6 +376,20 @@ const hideProjects = () => {
     pr2[0].className = 'pr2';
     const pr3 = window.document.getElementsByClassName('pr3');
     pr3[0].className = 'pr3';
+    const expTitle = window.document.getElementsByClassName('expTitle');
+    expTitle[0].className = 'title';
+}
+const hideHobbies = () => {
+    const ele = window.document.getElementsByClassName('titleContainer3');
+    ele[0].className = 'titleContainer3';
+    const pr1 = window.document.getElementsByClassName('hb1');
+    pr1[0].className = 'hb1';
+    const pr2 = window.document.getElementsByClassName('hb2');
+    pr2[0].className = 'hb2';
+    const pr3 = window.document.getElementsByClassName('hb3');
+    pr3[0].className = 'hb3';
+    const pr4 = window.document.getElementsByClassName('hb4');
+    pr4[0].className = 'hb4';
     const expTitle = window.document.getElementsByClassName('expTitle');
     expTitle[0].className = 'title';
 }

@@ -26,7 +26,20 @@ const projectClick = () => {
     const prTitle = window.document.getElementsByClassName('titleProject');
     prTitle[0].className = 'expTitle';
 }
-
+const hobbiesClick = () => {
+    const ele = window.document.getElementsByClassName('titleContainer3');
+    ele[0].className += ' hideEle';
+    const pr1 = window.document.getElementsByClassName('hb1');
+    pr1[0].className += ' showHb';
+    const pr2 = window.document.getElementsByClassName('hb2');
+    pr2[0].className += ' showHb';
+    const pr3 = window.document.getElementsByClassName('hb3');
+    pr3[0].className += ' showHb';
+    const pr4 = window.document.getElementsByClassName('hb4');
+    pr4[0].className += ' showHb';
+    const prTitle = window.document.getElementsByClassName('titleHobbies');
+    prTitle[0].className = 'expTitle';
+}
 const goContacts = () => {
     const ele = window.document.getElementsByClassName('animDiv');
     ele[0].className += ' activeAnimDiv';

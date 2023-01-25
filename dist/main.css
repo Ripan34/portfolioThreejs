@@ -1,0 +1,509 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    background-color: #D7D7D7;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 70px;
+    left: 0;
+    outline: none;
+}
+
+
+.section
+{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    font-family: 'Cabin', sans-serif;
+    color: #ffeded;
+    text-transform: uppercase;
+    font-size: 7vmin;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+section:nth-child(odd)
+{
+    justify-content: flex-end;
+}
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+    box-sizing: border-box;
+    z-index: 99;
+}
+.items {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 3px;
+}
+.items:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #CDA4E0;
+    transform-origin: bottom right;
+    transition: transform 0.20s ease-out;
+    z-index: -9;
+  }
+  .items:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+.lg {
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    font-size: 2vw;
+    text-decoration: none;
+}
+.rightC {
+    width: 15%;
+    justify-content: space-between;
+    display: flex;
+}
+.title1 {
+    font-size: 4vw;
+}
+.title2 {
+    font-size: 4vw;
+}
+.title3 {
+    font-size: 4vw;
+    display: none;
+}
+@keyframes op {
+    from {
+        transform: translate(10px, 10px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+.box {
+    width: 100%;
+    height: 30%;
+    position: fixed;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+    z-index: 99;
+}
+.titleContainer {
+    display: none;
+    animation: op 0.2s ease-in;
+    flex-direction: column;
+    transform: translate3d(0px, 0px, 0px);
+}
+.titleContainer2 {
+    display: none;
+    animation: op 0.2s ease-in;
+    flex-direction: column;
+    transform: translate3d(0px, 0px, 0px);
+}
+.titleContainer3 {
+    display: none;
+    animation: op 0.2s ease-in;
+    flex-direction: column;
+    transform: translate3d(0px, 0px, 0px);
+}
+.moreBtn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 45px;
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.gitBtn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+}
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
+  .progressCon{
+    position: fixed;
+    bottom: 50px;
+    width: 80%;
+    height: 2px;
+    background-color: rgb(186, 177, 177);
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 2px;
+  }
+  .progressBar {
+    height: 100%;
+    background-color: black;
+    border-radius: 2px;
+    width: 0.5px;
+    transition: width 1s ease-out;
+  }
+  .names {
+    position: fixed;
+    bottom: 25px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .hideEle {
+    animation: hide 0.4s ease-out both;
+  }
+  @keyframes hide {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-200px, -100px);
+        opacity: 0;
+    }
+}
+.exBox {
+    display: flex;
+    background-color: rgb(255, 255, 255, 0.4);
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    padding: 15px;
+}
+.ex1 {
+    position: fixed;
+    top: 200px;
+    left: 5%;
+    display: none;
+}
+.ex2 {
+    position: fixed;
+    top: 100px;
+    left: 40%;
+    display: none;
+}
+.ex3 {
+    position: fixed;
+    top: 100px;
+    left: 70%;
+    display: none;
+    width: 70%;
+}
+.showEx1 {
+    display: block;
+    animation: showExAnimation 0.4s ease-in both;
+}
+@keyframes showExAnimation {
+    from {
+       
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.expTitle {
+    display: block;
+    animation: titleAnim 0.4s ease-in both;
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    font-size: 50px;
+}
+@keyframes titleAnim {
+    from {
+        transform: translate(100px, 100px);
+        opacity: 0;
+    }
+    to {
+        /* transform: translate(0); */
+        opacity: 1;
+    }
+}
+.title {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    display: none;
+    font-size: 50px;
+}
+.expHead {
+    font-size: 25px;
+}
+
+.titleProject {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    display: none;
+    font-size: 50px;
+}
+.prHead {
+    font-size: 25px;
+}
+.prBox {
+    display: flex;
+    background-color: rgb(255, 255, 255, 0.4);
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    padding: 15px;
+}
+.pr1 {
+    position: fixed;
+    top: 200px;
+    left: 5%;
+    display: none;
+}
+.pr2 {
+    position: fixed;
+    top: 100px;
+    left: 40%;
+    display: none;
+}
+.pr3 {
+    position: fixed;
+    top: 100px;
+    left: 70%;
+    display: none;
+    width: 70%;
+}
+.showPr {
+    display: block;
+    animation: showPrAnimation 0.4s ease-in both;
+}
+@keyframes showPrAnimation {
+    from {
+       
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.logo {
+    width: 15px;
+    margin-right: 5px;
+}
+.heading {
+    margin-top: 140px;
+    margin-left: 100px;
+    font-size: 2vw;
+}
+.container {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.labels {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.inputs {
+    width: 100%;
+    border: none;
+    height: 30px;
+    outline: none;
+    padding: 5px;
+    font-size: 15px;
+}
+.input:focus {
+    outline: none;
+}
+.inputsTxt {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 15px;
+}
+.submit {
+    margin-top: 10px;
+    margin-left: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.submit:hover {
+    transform: scale(1.1, 1.1);
+    transition: all 0.2s ease-out;
+}
+.moreBtn:hover {
+    transform: scale(1.1, 1.1);
+    transition: all 0.2s ease-out;
+}
+.gitBtn:hover {
+    transform: scale(1.1, 1.1);
+    transition: all 0.2s ease-out;
+}
+.animDiv {
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 0px;
+    height: 100vh;
+    transition: all 0.5s ease-out;
+    background-color: black;
+    z-index: 9999;
+}
+.activeAnimDiv {
+    width: 100vw;
+}
+.contactAnimDiv {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    animation: shrink 0.5s ease-in both;
+}
+@keyframes shrink {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0px;
+    }
+}
+.resumeAnimDiv {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    animation: shrinkRes 1s ease-in both;
+    z-index: 9999;
+}
+@keyframes shrinkRes {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0px;
+    }
+}
+.sv{
+    stroke-dasharray: 1097;
+    animation: 3s fillSvg linear both;
+}
+
+@keyframes fillSvg {
+    from{
+        stroke-dashoffset: 1097;
+    }
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+.titleHobbies {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    display: none;
+    font-size: 50px;
+}
+.hbHead {
+    font-size: 25px;
+}
+.hbBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    padding: 15px;
+}
+.hb1 {
+    position: fixed;
+    top: 200px;
+    left: 5%;
+    display: none;
+}
+.hb2 {
+    position: fixed;
+    top: 100px;
+    left: 40%;
+    display: none;
+}
+.hb3 {
+    position: fixed;
+    top: 100px;
+    left: 70%;
+    display: none;
+    width: 70%;
+}
+.hb4 {
+    position: fixed;
+    top: 400px;
+    left: 70%;
+    display: none;
+    width: 70%;
+}
+.showHb {
+    display: block;
+    animation: showPrAnimation 0.4s ease-in both;
+}
+@keyframes showPrAnimation {
+    from {
+       
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*# sourceMappingURL=main.css.map*/
