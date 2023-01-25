@@ -26,3 +26,22 @@ const projectClick = () => {
     const prTitle = window.document.getElementsByClassName('titleProject');
     prTitle[0].className = 'expTitle';
 }
+
+const goContacts = () => {
+    const ele = window.document.getElementsByClassName('animDiv');
+    ele[0].className += ' activeAnimDiv';
+    setTimeout(() => {
+        window.location.href = '/contact.html';
+    }, 600)
+
+}
+const goResume = () => {
+    const ele = window.document.getElementsByClassName('animDiv');
+    ele[0].className += ' activeAnimDiv';
+    setTimeout(() => {
+        window.location.href = '/resume.html';
+    }, 600)
+}
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }

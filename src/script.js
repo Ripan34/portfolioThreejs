@@ -15,7 +15,6 @@ import gsap from 'gsap';
  */
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
-window.scrollTo(0, 0);
 // Scene
 const scene = new THREE.Scene()
 
@@ -100,6 +99,42 @@ const initial2 = () => {
     progBar[0].style.width = '30%';
 }
 
+const initial3 = () => {
+    console.log("int 3");
+    // gsap.to(camera.rotation, {
+    //     x: 0,
+    //     y: 0,
+    //     z: 0,
+    //     duration: 1,
+    //     onStart: function(){
+    //         const ele = window.document.getElementsByClassName('titleContainer3');
+    //         ele[0].style.display = 'none';
+    //         bdy.className = "stop-scrolling";
+    //         hideProjects();
+    //     }
+    // })
+    gsap.to(camera.position, {
+        z: '0.1',
+        x: '-=0.6',
+        duration: 1.5,
+        onStart: function(){
+            const ele = window.document.getElementsByClassName('titleContainer3');
+            ele[0].style.display = 'none';
+            bdy.className = "stop-scrolling";
+            hideProjects();
+        },
+        onComplete: function(){
+            const ele = window.document.getElementsByClassName('titleContainer2');
+            ele[0].style.display = 'block';
+            ele[0].className = 'titleContainer2';
+            bdy.className = ""
+            jobs[3] = false;
+        }
+    })
+    progBar[0].style.width = '60%';
+}
+
+
 const progBar = window.document.getElementsByClassName('progressBar');
 
 const phase1 = () => {
@@ -140,7 +175,7 @@ const phase2 = () => {
             //     opacity: 0,
             //     duration: 0.7
             // })
-            bdy.className = "stop-scrolling"
+            bdy.className = "stop-scrolling";
             const ele = window.document.getElementsByClassName('titleContainer');
             ele[0].style.display = 'none';
             hideExperience();
@@ -165,35 +200,17 @@ const phase2 = () => {
             jobs[2] = true;
         }
     })
-    //console.log(progBar[0].style.width)
     progBar[0].style.width = '60%';
 }
 
 const phase3 = () => {
     console.log("3")
-    // gsap.to(camera.rotation, {
-    //     y: '-2',
-    //     x: '0.4',
-    //     duration: 1,
-    //     onStart: function(){
-    //         // gsap.to('.titleContainer', {
-    //         //     opacity: 0,
-    //         //     duration: 0.7
-    //         // })
-    //         // bdy.className = "stop-scrolling"
-    //         // const ele = window.document.getElementsByClassName('titleContainer');
-    //         // ele[0].style.display = 'none';
-    //     },
-    //     onComplete: function(){
-    //         // const ele = window.document.getElementsByClassName('titleContainer');
-    //         // ele[0].style.display = 'none';
-    //     }
-    // })
     gsap.to(camera.position, {
         z: '-0.1',
-        x: '+=0.3',
+        x: '+=0.6',
         duration: 1.5,
         onStart: function(){
+            bdy.className = "stop-scrolling";
             const ele = window.document.getElementsByClassName('titleContainer2');
             ele[0].style.display = 'none';
             hideProjects();
@@ -202,9 +219,10 @@ const phase3 = () => {
             const ele = window.document.getElementsByClassName('titleContainer3');
             ele[0].style.display = 'block';
             bdy.className = ""
-            jobs[2] = true;
+            jobs[3] = true;
         }
     })
+    progBar[0].style.width = '100%';
 }
 let oldValue = 0;
 const bdy = window.document.querySelector('body');
@@ -219,21 +237,23 @@ window.addEventListener('scroll' , function(e){
     else if((oldValue - newValue) > 0 && window.pageYOffset < 300 && jobs[2]){
         initial2();
     }
+    else if((oldValue - newValue) > 0 && window.pageYOffset < 600 && jobs[3]){
+        console.log("333")
+        initial3();
+    }
     else if(window.pageYOffset > 300 && !jobs[1]){
        // console.log("id")
         phase1();
     }
     else if(window.pageYOffset > 600 && !jobs[2]) {
+        console.log(camera.rotation);
+        console.log(camera.position);
         phase2();
-        // console.log(camera.rotation);
-        // console.log(camera.position);
     }
     else if(window.pageYOffset > 900 && !jobs[3]){
         phase3();
     }
-    else if(window.pageYOffset > 1200 && !jobs[4]){
 
-    }
     oldValue = newValue;
 })
 /**
